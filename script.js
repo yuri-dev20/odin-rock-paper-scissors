@@ -63,4 +63,17 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+function playGame(round) {
+    for (let i = 0; i < 5; i++) {
+        round(getHumanChoice(), getComputerChoice());
+    }
+
+    if (humanScore > computerScore){
+        console.log(`Human won! \n Human score: ${humanScore} \n Computer score: ${computerScore}`)
+    } else {
+        console.log(`Computer won! \n Human score: ${humanScore} \n Computer score: ${computerScore}`)
+    }
+    
+}
+
+playGame(playRound);
