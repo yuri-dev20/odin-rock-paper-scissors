@@ -1,3 +1,5 @@
+const btns = document.querySelectorAll("button");
+
 let computerScore = 0;
 let humanScore = 0;
 
@@ -64,16 +66,22 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame(round) {
-    for (let i = 0; i < 5; i++) {
-        round(getHumanChoice(), getComputerChoice());
-    }
+    // for (let i = 0; i < 5; i++) {
+    //     round(getHumanChoice(), getComputerChoice());
+    // }
 
-    if (humanScore > computerScore){
-        console.log(`Human won! \n Human score: ${humanScore} \n Computer score: ${computerScore}`)
-    } else {
-        console.log(`Computer won! \n Human score: ${humanScore} \n Computer score: ${computerScore}`)
-    }
-    
+    // if (humanScore > computerScore){
+    //     console.log(`Human won! \n Human score: ${humanScore} \n Computer score: ${computerScore}`)
+    // } else {
+    //     console.log(`Computer won! \n Human score: ${humanScore} \n Computer score: ${computerScore}`)
+    // }
+    console.log("Play Game function!")
 }
+
+btns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        console.log(e.target.textContent);
+    });
+});
 
 playGame(playRound);
